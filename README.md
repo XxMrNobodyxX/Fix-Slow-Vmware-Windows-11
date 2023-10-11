@@ -1,4 +1,7 @@
 # Fix-Slow-Vmware-Windows-11
+
+Improve VMware performance on Windows 11.
+
 After battling for a long time with Windows 11 and slow VMs on Vmware I chained a bunch of fixes in a .bat file that makes my VMs run normally again.
 This .bat file will disable virtualized-security on Windows 11 machines and improve slow Vmware VM performance.
 
