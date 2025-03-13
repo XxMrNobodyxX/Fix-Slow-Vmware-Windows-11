@@ -10,7 +10,7 @@ After struggling with slow VMs on VMware, I created a batch script that disables
 ✔ Prevents unnecessary security features from slowing down your VM  
 
 
-📌 Disables the Hyper-V hypervisor and all Hyper-V features to prevent conflicts with VMware:
+📌 **Disables the Hyper-V hypervisor and all Hyper-V features to prevent conflicts with VMware:**
 `powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"`
 
