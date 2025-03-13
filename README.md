@@ -11,8 +11,8 @@ After struggling with slow VMs on VMware, I created a batch script that disables
 
 
 📌 **Disables the Hyper-V hypervisor and all Hyper-V features to prevent conflicts with VMware:**
-`powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
-powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"`
+```powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
+powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"```
 
 📌 Ensures the hypervisor is disabled at boot, preventing Hyper-V from interfering:
 `bcdedit /set hypervisorlaunchtype off`
