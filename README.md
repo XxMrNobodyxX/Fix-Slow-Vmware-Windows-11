@@ -1,13 +1,47 @@
-# Fix Slow Vmware Windows 11
+# Fix Slow VMware Windows 11  
 
-Improve VMware performance on Windows 11.
+Improve VMware performance on Windows 11 by disabling Virtualized Security.  
 
-After battling for a long time with Windows 11 and slow VMs on VMware, I chained a bunch of fixes in a .bat file that would make my VMs run normally again.
-This .bat file will disable virtualised security on Windows 11 machines and improve slow Vmware VM performance.
+After struggling with slow VMs on VMware, I created a batch script that disables Virtualized Security, allowing VMs to run normally again.  
 
-* You will need to download the dg_readiness tool from the repo or Microsoft: [Device Guard and Credential Guard hardware readiness tool](https://download.microsoft.com/download/B/D/8/BD821B1F-05F2-4A7E-AA03-DF6C4F687B07/dgreadiness_v3.6.zip).
-* Extract the file and modify the path in the .bat file
-* Run the .bat file as an administrator. You might see an error depending on how your settings are applied, but the process will complete.
-* Restart your machine and hit the Windows key when prompted. 
-* In Systeminfo, virtualised security will be shown as not enabled, and your VMs will no longer have the side channel mitigation option.
-* You will need to rerun the script after every Windows update or if you see that Windows has re-enabled virtualised security.
+## What This Script Does  
+✔ Disables Virtualized Security on Windows 11  
+✔ Improves VMware VM performance  
+✔ Prevents unnecessary security features from slowing down your VM  
+
+---
+
+## Download Requirements  
+
+You'll need to download the **Device Guard and Credential Guard hardware readiness tool** from either this repository or Microsoft:  
+
+**[Microsoft Download Link](https://download.microsoft.com/download/B/D/8/BD821B1F-05F2-4A7E-AA03-DF6C4F687B07/dgreadiness_v3.6.zip)**  
+
+---
+
+## How to Use  
+
+1️⃣ **Extract the `dg_readiness` tool** from the ZIP file.  
+2️⃣ **Modify the path** in the `.bat` file to point to the extracted location.  
+3️⃣ **Run the `.bat` file as Administrator** (ignore errors if any).  
+4️⃣ **Restart your machine** when prompted.  
+5️⃣ Check `Systeminfo` – Virtualized Security should now be disabled.  
+
+---
+
+## Important Notes  
+
+- **This script must be re-run after every Windows update** or whenever Windows re-enables Virtualized Security.  
+- Once disabled, the **Side Channel Mitigation** option will no longer appear in VMware settings.  
+- Running this script will not harm your system, but ensure you understand its effects before use.  
+
+---
+
+## Disclaimer  
+
+This script modifies system security settings. Use at your own risk. Ensure you understand the impact of disabling Virtualized Security before proceeding.  
+
+---
+
+**Enjoy faster VMware performance on Windows 11!** 🚀  
+
