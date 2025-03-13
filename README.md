@@ -16,23 +16,35 @@ powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyp
 powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"
 ```
 
-Ensures the hypervisor is disabled at boot, preventing Hyper-V from interfering:
+**Ensures the hypervisor is disabled at boot, preventing Hyper-V from interfering:**
+```
 bcdedit /set hypervisorlaunchtype off
+```
 
-Completely removes all Hyper-V related features using DISM (Deployment Image Servicing and Management):
+**Completely removes all Hyper-V related features using DISM (Deployment Image Servicing and Management):**
+```
 dism /online /disable-feature /featurename:Microsoft-hyper-v-all
+```
 
-Disables Virtual Secure Mode (VSM), which is part of Windows Defender Credential Guard:
+**Disables Virtual Secure Mode (VSM), which is part of Windows Defender Credential Guard:**
+```
 bcdedit /set vsmlaunchtype off
+```
 
-Disables LSA (Local Security Authority) Isolation and Virtualization-Based Security (VBS) to prevent performance degradation:
+**Disables LSA (Local Security Authority) Isolation and Virtualization-Based Security (VBS) to prevent performance degradation:**
+```
 bcdedit /set '{0cb3b571-2f2e-4343-a879-d86a476d7215}' loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+```
 
-Runs the Device Guard Readiness Tool to disable Device Guard and Credential Guard:
+**Runs the Device Guard Readiness Tool to disable Device Guard and Credential Guard:**
+```
 powershell.exe C:\dgreadiness_v3.6\dgreadiness_v3.6\DG_Readiness_Tool_v3.6.ps1 -Disable
+```
 
-Disables power throttling for VMware Workstation, ensuring full CPU performance:
+**Disables power throttling for VMware Workstation, ensuring full CPU performance:**
+```
 powercfg /powerthrottling disable /path "C:\Program Files (x86)\VMware\VMware Workstation\x64\vmware-vmx.exe"
+```
 
 ---
 
