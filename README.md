@@ -9,10 +9,12 @@ After struggling with slow VMs on VMware, I created a batch script that disables
 ✔ Improves VMware VM performance  
 ✔ Prevents unnecessary security features from slowing down your VM  
 
-```
+
 📌 **Disables the Hyper-V hypervisor and all Hyper-V features to prevent conflicts with VMware:**
+```
 powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 powershell.exe Disable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"
+```
 
 📌 Ensures the hypervisor is disabled at boot, preventing Hyper-V from interfering:
 bcdedit /set hypervisorlaunchtype off
@@ -31,7 +33,6 @@ powershell.exe C:\dgreadiness_v3.6\dgreadiness_v3.6\DG_Readiness_Tool_v3.6.ps1 -
 
 📌 Disables power throttling for VMware Workstation, ensuring full CPU performance:
 powercfg /powerthrottling disable /path "C:\Program Files (x86)\VMware\VMware Workstation\x64\vmware-vmx.exe"
-```
 
 ---
 
